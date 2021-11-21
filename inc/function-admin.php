@@ -23,35 +23,32 @@ $functions = ['herhesh_sidebar_name', 'herhesh_sidebar_test'];
 
 function herhesh_custom_settings()
 {
-    global $fillable;
-    global $functions;
-    for ($i = 0; $i < count($fillable); $i++) {
-        //add settings and register fields;
-        register_setting('herhesh-settings-group', 'fillable');
+    register_setting('herhesh-settings-group', 'inputs','herhesh_sanitize_inputs');
 
-        //add fillable
-        add_settings_field("sidebar-$fillable[$i]", "Sidebar $fillable[$i]", "$functions[$i]", 'herhesh-theme', 'herhesh-sidebar-section');
-    }
-
+    //add fillable
+    add_settings_field("sidebar-inputs", "Sidebar inputs", "herhesh_sidebar", 'herhesh-theme', 'herhesh-sidebar-section');
     //add section
     add_settings_section('herhesh-sidebar-section', 'Sidebar Options', 'herhesh_sidebar_option', 'herhesh-theme');
 }
 
-function herhesh_sidebar_name()
+function herhesh_sidebar()
 {
-    $field = esc_attr(get_option('name'));
-    echo "<input type='text' name='name' placeholder='Sidebar Name' value='$field'>";
+    $fields = get_option('inputs');
+    echo "<input type='text' name='inputs[name]' placeholder='Sidebar Name' value='$fields[name]'><br>";
+    echo "<input type='text' name='inputs[test]' placeholder='Sidebar Name' value='$fields[test]'><br>";
 }
-
-function herhesh_sidebar_test()
+function herhesh_sanitize_inputs($inputs)
 {
-    $field = esc_attr(get_option('test'));
-    echo "<input type='text' name='test' placeholder='Sidebar Test' value='$field'>";
+    $outputs = [];
+    foreach($inputs as $key => $input){
+        $outputs[$key] = sanitize_text_field($input);
+        $outputs[$key] = str_replace('@','',$input);
+    }
+    return $outputs;
 }
 
 function herhesh_sidebar_option()
 {
-    
 }
 
 add_action('admin_menu', 'herhesh_add_admin_page');
