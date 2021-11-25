@@ -25,3 +25,55 @@ body{
     width:100%;
     height: 100%;
 }
+.navbar-herhesh {
+    margin-top: -52px;
+    background-color: rgb(5, 5, 5, .5);
+    padding: 14px;
+}
+
+.navbar-nav {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%
+}
+
+.navbar-nav li {
+    margin-right: 10px
+}
+
+.navbar-nav li a {
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    padding:10px
+}
+.navbar-nav li a:hover{
+    color:#000;
+    background-color: rgb(255, 255, 255, .8);
+}
+article{
+    margin: 40px auto 0;
+    /* width:500px */
+}
+article .entry-meta{
+    margin-bottom:10px;
+}
+
+.standard-featured{
+    height: 500px;
+    /* width: 100%; */
+}
+a, a:hover{
+    color:#000;
+    text-decoration: none;
+}
+.herhesh-format-image header{
+    height:500px
+}
+
+.herhesh-format-audio .entry-content iframe{
+    height:166px;
+    width:100%
+}
+

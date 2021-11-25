@@ -1,0 +1,35 @@
+get_header();
+get_footer();
+body_class();
+wp_head();
+wp_title();
+wp_nav_menu([
+    'theme_location' => 'primary',
+    'container' => false,
+    'menu_class' => 'nav navbar-nav'
+]);
+is_singular();
+language_attributes();
+
+add_theme_support();
+add_filter();
+add_action();
+
+register_setting(); 
+add_settings_field(); 
+add_settings_section();
+
+settings_fields(); 
+do_settings_sections();
+submit_button();
+
+
+bloginfo();
+the_excerpt();
+has_post_thumbnail()
+the_post_thumbnail();
+wp_get_attachment_url(get_post_thumbnail_id(get_the_ID()));
+get_permalink();
+the_permalink();
+
+

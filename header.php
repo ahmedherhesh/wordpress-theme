@@ -12,26 +12,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
-    <style>
-        .navbar-nav{
-            flex-direction: row;
-            justify-content: center;
-            width:100%
-        }
-        .navbar-nav li {
-            margin-right:10px
-        }
-        .navbar-nav li a{
-            text-transform: uppercase;
-            color:#000;
-            text-decoration: none;
-        }
-    </style>
+
     <?php if (is_singular() && pings_open(get_queried_object())) : ?>
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     <?php endif ?>
     <?php wp_head(); ?>
-    <title><?php bloginfo('name'); wp_title(); ?></title>
+    <title><?php bloginfo('name');
+            wp_title(); ?></title>
 </head>
 
 <body <?php body_class(); ?>>
@@ -45,12 +32,12 @@
                     </div>
                     <div class="nav-container">
                         <nav class="navbar navbar-default navbar-herhesh">
-                            <?php 
-                                wp_nav_menu([
-                                    'theme_location' => 'primary',
-                                    'container' => false,
-                                    'menu_class' => 'nav navbar-nav'
-                                ]);
+                            <?php
+                            wp_nav_menu([
+                                'theme_location' => 'primary',
+                                'container' => false,
+                                'menu_class' => 'nav navbar-nav'
+                            ]);
                             ?>
                         </nav>
                     </div>
