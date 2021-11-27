@@ -76,4 +76,9 @@ a, a:hover{
     height:166px;
     width:100%
 }
+.aside-featured{
+    width:136px;
+    height:136px;
+    border-radius: 50%;
+}
 
