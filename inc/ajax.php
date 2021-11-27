@@ -6,6 +6,7 @@ function herhesh_load_more()
     $page = $_POST['page'] + 1;
     $query = new WP_Query([
         'post_type' => 'post',
+        'post_status' => 'publish',
         'paged' => $page
     ]);
     if ($query->have_posts()) {
