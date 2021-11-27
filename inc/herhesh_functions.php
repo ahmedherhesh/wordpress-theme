@@ -68,3 +68,10 @@ function herhesh_get_attachment($num = 1)
 
     return $output;
 }
+
+function herhesh_grab_url(){
+    if(!preg_match('/<a\s[^>]*?href=[\'"](.+?)[\'"]/i',get_the_content(),$links)){
+        return false;
+    }
+    return esc_url_raw($links[1]);
+}
