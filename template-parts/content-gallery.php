@@ -5,9 +5,13 @@
             <?php echo herhesh_posted_meta(); ?>
         </div>
         <div class="entry-content">
-            <?php if (herhesh_get_attachment()) : ?>
-                <div class="standard-featured background-image" style="background-image: url(<?php echo herhesh_get_attachment(); ?>);"></div>
-            <?php endif; ?>
+
+            <?php
+            if (herhesh_get_attachment()) :
+                $attachments = herhesh_get_attachment(4);
+                print_r($attachments);
+            endif;
+            ?>
             <div class="entry-exerpt">
                 <?php the_excerpt(); ?>
             </div>

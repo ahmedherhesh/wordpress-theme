@@ -7,7 +7,8 @@
     </header>
     <div class="entry-content">
         <?php
-            $content = do_shortcode(apply_filters('the_content', $post->post_content));
+            // $content = do_shortcode(apply_filters('the_content', $post->post_content));
+            $content = do_shortcode(apply_filters('the_content', get_the_content()));
             $embed   = get_media_embedded_in_content( $content, ['audio','iframe']);
             echo str_replace('visual=true','visual=false',$embed[0]);
         ?>

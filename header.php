@@ -22,7 +22,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <div class="container" style="margin: auto;">
+    <div class="container-fluied">
         <div class="row">
             <div class="col-xs-12">
                 <div class="header-container text-center background-image" style="background-image: url(<?php header_image(); ?>);">
