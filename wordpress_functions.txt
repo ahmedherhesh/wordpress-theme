@@ -35,3 +35,4 @@ the_permalink();
 the_content();
 get_the_content();
 the_post_navigation();
+comments_template();

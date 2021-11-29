@@ -77,8 +77,8 @@ function herhesh_grab_url(){
 }
 
 function herhesh_custom_posts_nav(){
-    $next = get_next_post_link();
     $prev = get_previous_post_link();
-    $nav = "$next $prev";
+    $next = get_next_post_link();
+    $nav = "<pre>$prev   ,   $next</pre>";
     return $nav;
 }
