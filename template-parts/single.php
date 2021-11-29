@@ -6,15 +6,7 @@
         </div>
     </header>
     <div class="entry-content text-center">
-        <?php if (herhesh_get_attachment()) : ?>
-            <div class="standard-featured background-image" style="background-image: url(<?php echo herhesh_get_attachment(); ?>);"></div>
-        <?php endif; ?>
-        <div class="entry-exerpt">
-            <?php the_excerpt(); ?>
-        </div>
-        <div class="button-container">
-            <a href="<?php the_permalink(); ?>" class="btn btn-default"><?php _e('Read More'); ?></a>
-        </div>
+        <?php the_content(); ?>
     </div>
     <footer class="entry-footer">
         <?php echo herhesh_posted_footer(); ?>

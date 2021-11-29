@@ -9,7 +9,7 @@
             <?php
             if (herhesh_get_attachment()) :
                 $attachments = herhesh_get_attachment(4);
-                print_r($attachments);
+                // print_r($attachments);
             endif;
             ?>
             <div class="entry-exerpt">

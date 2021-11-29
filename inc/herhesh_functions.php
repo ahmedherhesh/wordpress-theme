@@ -75,3 +75,10 @@ function herhesh_grab_url(){
     }
     return esc_url_raw($links[1]);
 }
+
+function herhesh_custom_posts_nav(){
+    $next = get_next_post_link();
+    $prev = get_previous_post_link();
+    $nav = "$next $prev";
+    return $nav;
+}
