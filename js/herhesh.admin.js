@@ -36,5 +36,10 @@ jQuery(document).ready( function($){
 		}
 		return;
 	});
+
+	$('#herhesh_contact_form').on('submit',function(e){
+		console.log('test');
+		e.preventDefault();
+	});
 	
 });
