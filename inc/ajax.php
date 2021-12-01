@@ -36,7 +36,16 @@ function herhesh_save_contact()
         // ]
     ];
     $post_id = wp_insert_post($data);
-    update_post_meta( $post_id, 'contact_email_key',$email);
+    if ($post_id != 0) {
+        update_post_meta($post_id, 'contact_email_key', $email);
+        // $to = get_blohinfo('admin_email');
+        // $subject = "Herhesh Contact Form - $title";
+        // $headers[] = "From: " . get_bloginfo('name') . "<$to>";
+        // $headers[] = "Reply-to:  $title <$email>";
+        // $headers[] = "Content-Type:  text/html: charset=UTF-8";
+        // wp_mail($to, $subject, $message, $headers);
+    }
+    die();
 }
 add_action('wp_ajax_nopriv_herhesh_save_user_contact_form', 'herhesh_save_contact');
 add_action('wp_ajax_herhesh_save_user_contact_form', 'herhesh_save_contact');
